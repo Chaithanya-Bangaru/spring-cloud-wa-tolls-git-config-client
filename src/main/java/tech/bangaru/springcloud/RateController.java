@@ -17,6 +17,9 @@ public class RateController {
 	@Value("${tollstart}")
 	private String tollstart;
 	
+	@Value("${connstring}")
+	private String connstring;	
+	
 	//@RequestMapping(value = "rate", method = RequestMethod.GET)
 	@GetMapping("/rate")
 	//@RequestMapping("rates") 
@@ -24,6 +27,7 @@ public class RateController {
 		m.addAttribute("tollRate",rate);
 		m.addAttribute("laneCount",lanecount);
 		m.addAttribute("tollStart",tollstart);
+		m.addAttribute("connString",connstring);
 		// name of the view
 		return "rateView";
 	}
