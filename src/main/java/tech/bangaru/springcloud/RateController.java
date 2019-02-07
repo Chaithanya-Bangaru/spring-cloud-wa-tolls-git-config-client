@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class RateController {
 	
 	@Value("${rate}")
-	private String tollrate;
+	private String rate;
 	
 	@Value("${lanecount}")
 	private String lanecount;
@@ -21,7 +21,7 @@ public class RateController {
 	@GetMapping("/rate")
 	//@RequestMapping("rates") 
 	public String getRate(Model m) {
-		m.addAttribute("tollRate",tollrate);
+		m.addAttribute("tollRate",rate);
 		m.addAttribute("laneCount",lanecount);
 		m.addAttribute("tollStart",tollstart);
 		// name of the view
